@@ -65,7 +65,7 @@ class RewriteUrl
         // to prevent a 404 when used on a home page
         $redirectUrlTemp = rtrim($redirectUrl,'/');
         $temp = explode('/',$redirectUrlTemp,5);
-        if (rtrim($temp[3],'/') ==  rtrim(end($temp),'/'))
+        if (isset($temp[3]) && rtrim($temp[3], '/') == rtrim(end($temp), '/'))
         {
             if (strpos(rtrim($redirectUrl, '/'), rtrim($targetStore->getBaseUrl(),'/')) === false) {
                 $redirectUrl = $targetStore->getBaseUrl();
