@@ -102,7 +102,7 @@ class Data extends AbstractHelper
         $baseUrl = str_replace(['https://', 'http://'], '', $baseUrl);
 
         $connection = $this->resource->getConnection();
-        $table = $connection->getTableName('core_config_data');
+        $table = $connection->getTableName('snbr_core_config_data');
         $websiteFilter = $connection->select()->from($table, ['scope_id'])
             ->where('scope = ?', 'websites')
             ->where('path in (?)', [Custom::XML_PATH_SECURE_BASE_URL, Custom::XML_PATH_UNSECURE_BASE_URL])
